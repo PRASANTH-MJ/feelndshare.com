@@ -28,7 +28,7 @@ document.getElementById("book-form").addEventListener("submit", e => {
 const io = new IntersectionObserver(entries => {
   entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); } });
 }, { threshold: 0.12 });
-document.querySelectorAll(".card, .steps li, .price, details, .two-col > div, .about-grid > div").forEach(el => {
+document.querySelectorAll(".card, .steps li, .price, details, .two-col > div, .about-grid > div, .doctor-grid > div").forEach(el => {
   el.classList.add("reveal");
   io.observe(el);
 });
