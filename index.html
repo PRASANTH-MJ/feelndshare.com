@@ -91,7 +91,7 @@
         <p>We draw on evidence-based approaches, including CBT, Transactional Analysis, solution-focused and person-centred therapy, and tailor each session to you. No labels, no pressure, just steady support at your pace.</p>
         <div class="stats">
           <div><strong>1:1</strong><span>Personalised sessions</span></div>
-          <div><strong>50 min</strong><span>Per session</span></div>
+          <div><strong>Flexible</strong><span>Session length</span></div>
           <div><strong>7 days</strong><span>Flexible slots</span></div>
         </div>
       </div>
@@ -185,27 +185,47 @@
   <!-- FEES -->
   <section id="fees" class="section tint">
     <div class="wrap">
-      <p class="eyebrow center">Session fees</p>
-      <h2 class="center">Simple, transparent pricing</h2>
+      <p class="eyebrow center">Service charges</p>
+      <h2 class="center">Choose the support that suits you</h2>
       <div class="prices">
         <div class="price">
-          <h3>Discovery call</h3>
-          <p class="amt">Free</p>
-          <p>15 minutes · phone or video</p>
+          <p class="plan-no">01</p>
+          <h3>Hourly Counselling</h3>
+          <p class="amt">₹799 <small>per hour</small></p>
+          <ul class="plan-list">
+            <li>Pay for the time you need.</li>
+            <li>Ideal for focused discussions and specific concerns.</li>
+            <li>Session duration is flexible, based on your requirements.</li>
+          </ul>
+          <a href="#book" class="btn btn-ghost plan-btn" data-plan="Hourly Counselling">Book now</a>
         </div>
         <div class="price featured">
-          <span class="tag">Most chosen</span>
-          <h3>Individual session</h3>
-          <p class="amt">₹1,499</p>
-          <p>50 minutes · in person or online</p>
+          <p class="plan-no">02</p>
+          <h3>Flexible Counselling Session</h3>
+          <p class="amt">₹1,499 <small>per session</small></p>
+          <ul class="plan-list">
+            <li>No fixed time limit for the session.</li>
+            <li>Continue the discussion at your own pace.</li>
+            <li>Ideal for exploring personal, emotional, and relationship concerns in depth.</li>
+          </ul>
+          <a href="#book" class="btn btn-light plan-btn" data-plan="Flexible Counselling Session">Book now</a>
         </div>
         <div class="price">
-          <h3>Couple / family session</h3>
-          <p class="amt">₹2,499</p>
-          <p>60 minutes · in person or online</p>
+          <p class="plan-no">03</p>
+          <h3>Continuity Support <span class="sub">Subscriber Plan</span></h3>
+          <p class="amt">₹2,499 <small>per session</small></p>
+          <ul class="plan-list">
+            <li>No fixed time limit for the scheduled session.</li>
+            <li>Additional on-call support between scheduled sessions.</li>
+            <li>Continued emotional and relationship guidance until your next scheduled session.</li>
+          </ul>
+          <a href="#book" class="btn btn-ghost plan-btn" data-plan="Continuity Support (Subscriber Plan)">Book now</a>
         </div>
       </div>
-      <p class="note center">Package discounts available for 4+ sessions. Student concessions on request.</p>
+      <div class="wellbeing">
+        <h3>Your Well-being Matters</h3>
+        <p>Counselling is not about giving you ready-made answers. It is about helping you understand yourself, overcome challenges, and discover meaningful solutions.</p>
+      </div>
     </div>
   </section>
 
@@ -256,6 +276,14 @@
           <h3>Request a session</h3>
           <label>Your name<input name="name" required autocomplete="name"></label>
           <label>Phone / WhatsApp<input name="phone" type="tel" required autocomplete="tel"></label>
+          <label>Plan
+            <select name="plan" id="plan">
+              <option>Hourly Counselling (₹799/hr)</option>
+              <option>Flexible Counselling Session (₹1,499)</option>
+              <option>Continuity Support (Subscriber Plan, ₹2,499)</option>
+              <option>Not sure yet</option>
+            </select>
+          </label>
           <div class="row">
             <label>I'm looking for
               <select name="service">

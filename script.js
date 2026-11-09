@@ -19,7 +19,7 @@ document.getElementById("book-form").addEventListener("submit", e => {
   const text =
     `Hello Feel N Share, I'd like to book a session.\n\n` +
     `Name: ${f.get("name")}\nPhone: ${f.get("phone")}\n` +
-    `Service: ${f.get("service")}\nMode: ${f.get("mode")}` +
+    `Service: ${f.get("service")}\nPlan: ${f.get("plan")}\nMode: ${f.get("mode")}` +
     (f.get("msg") ? `\nNote: ${f.get("msg")}` : "");
   window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`, "_blank");
 });
@@ -36,3 +36,10 @@ document.querySelectorAll(".card, .steps li, .price, details, .two-col > div, .a
 // Nav shadow on scroll
 const nav = document.querySelector(".nav");
 addEventListener("scroll", () => nav.classList.toggle("scrolled", scrollY > 10), { passive: true });
+
+// "Book now" on a plan pre-selects it in the form
+document.querySelectorAll(".plan-btn").forEach(b => b.addEventListener("click", () => {
+  const sel = document.getElementById("plan");
+  const opt = [...sel.options].find(o => o.text.startsWith(b.dataset.plan.split(" (")[0]));
+  if (opt) sel.value = opt.value;
+}));
