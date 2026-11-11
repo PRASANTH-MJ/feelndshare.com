@@ -52,3 +52,18 @@ document.querySelectorAll(".plan-btn").forEach(b => b.addEventListener("click", 
   const opt = [...sel.options].find(o => o.text.startsWith(b.dataset.plan.split(" (")[0]));
   if (opt) sel.value = opt.value;
 }));
+
+// Light / dark theme toggle (initial theme is set in <head>)
+const themeBtn = document.querySelector(".theme-btn");
+const themeMeta = document.querySelector('meta[name="theme-color"]');
+function applyTheme(t) {
+  document.documentElement.dataset.theme = t;
+  themeBtn.setAttribute("aria-label", t === "dark" ? "Switch to light theme" : "Switch to dark theme");
+  if (themeMeta) themeMeta.content = t === "dark" ? "#121815" : "#fbf8f3";
+}
+applyTheme(document.documentElement.dataset.theme || "light");
+themeBtn.addEventListener("click", () => {
+  const next = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+  applyTheme(next);
+  try { localStorage.setItem("fns-theme", next); } catch (e) {}
+});

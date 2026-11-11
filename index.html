@@ -13,6 +13,15 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&family=Noto+Sans+Malayalam:wght@400;600&display=swap" rel="stylesheet">
+  <meta name="theme-color" content="#fbf8f3">
+  <script>
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem("fns-theme"); } catch (e) {}
+      if (t !== "light" && t !== "dark") t = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      document.documentElement.dataset.theme = t;
+    })();
+  </script>
   <link rel="stylesheet" href="styles.css">
   <script type="application/ld+json">
   {
@@ -48,7 +57,6 @@
       <img src="brand/mark.svg" class="logo" alt="" width="44" height="44">
       <span>Feel<em>nd</em>share</span>
     </a>
-    <button class="menu-btn" aria-label="Open menu" aria-expanded="false">☰</button>
     <nav class="links">
       <a href="#about">About</a>
       <a href="#counsellor">Dr. Kabeer</a>
@@ -58,6 +66,13 @@
       <a href="#faq">FAQ</a>
       <a href="#book" class="btn btn-small">Book a session</a>
     </nav>
+    <div class="nav-actions">
+      <button class="theme-btn" type="button" aria-label="Switch to dark theme" title="Switch theme">
+        <svg class="i-moon" viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><path d="M20.5 14.6A8.5 8.5 0 0 1 9.4 3.5a8.5 8.5 0 1 0 11.1 11.1z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+        <svg class="i-sun" viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+      <button class="menu-btn" aria-label="Open menu" aria-expanded="false">☰</button>
+    </div>
   </div>
 </header>
 
@@ -242,21 +257,26 @@
         </div>
       </div>
       <div class="free-card">
-        <div class="free-head">
-          <p class="plan-no">Community support</p>
-          <h3>Free Counselling Support</h3>
-          <p class="amt">₹0 <small>– On Request</small></p>
-          <p class="free-lead">Because everyone deserves access to emotional support.</p>
-        </div>
-        <div class="free-body">
-          <ul class="plan-list">
-            <li>Available for individuals facing financial difficulties.</li>
-            <li>Limited free counselling appointments.</li>
-            <li>Requests are reviewed confidentially.</li>
-            <li>Appointment subject to availability.</li>
-          </ul>
-          <a href="#book" class="btn plan-btn" data-plan="Free Counselling Support">Request Free Counselling</a>
-          <p class="free-note">A limited community support initiative by Feelndshare.</p>
+        <div class="free-inner">
+          <div class="free-head">
+            <span class="free-tag">Community support</span>
+            <div class="free-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="30" height="30"><path d="M12 20.6s-7.6-4.6-9.3-9.4C1.6 8 3.6 4.5 7 4.5c2 0 3.6 1.1 5 3 1.4-1.9 3-3 5-3 3.4 0 5.4 3.5 4.3 6.7-1.7 4.8-9.3 9.4-9.3 9.4z" fill="#fff"/></svg>
+            </div>
+            <h3>Free Counselling Support</h3>
+            <p class="free-amt"><span class="rs">₹0</span><span class="free-pill">On Request</span></p>
+            <p class="free-lead">Because everyone deserves access to emotional support.</p>
+          </div>
+          <div class="free-body">
+            <ul class="free-list">
+              <li><b>For financial difficulty</b>Available for individuals facing financial difficulties.</li>
+              <li><b>Limited appointments</b>Limited free counselling appointments.</li>
+              <li><b>Confidential review</b>Requests are reviewed confidentially.</li>
+              <li><b>Subject to availability</b>Appointment subject to availability.</li>
+            </ul>
+            <a href="#book" class="btn btn-block plan-btn" data-plan="Free Counselling Support">Request Free Counselling</a>
+            <p class="free-note">🤝 A limited community support initiative by Feelndshare.</p>
+          </div>
         </div>
       </div>
       <div class="wellbeing">
