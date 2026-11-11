@@ -1,1 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><circle cx="15" cy="20" r="11" fill="#7f9c86" opacity=".85"/><circle cx="25" cy="20" r="11" fill="#d89a7b" opacity=".75"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Feelndshare mark: two speech bubbles (feel + share); where they meet is a heart -->
+  <path d="M24 10a18 18 0 1 1-8.7 33.8L7 47l2.6-8.3A18 18 0 0 1 24 10z" fill="#7f9c86"/>
+  <path d="M40 10a18 18 0 1 0 8.7 33.8L57 47l-2.6-8.3A18 18 0 0 0 40 10z" fill="#d89a7b"/>
+  <path d="M32 11.9a18 18 0 0 1 0 32.2 18 18 0 0 1 0-32.2z" fill="#4f6e58"/>
+  <path d="M32 36.6c-3.9-2.9-5.6-5-5.6-7.3a2.8 2.8 0 0 1 5.6-1 2.8 2.8 0 0 1 5.6 1c0 2.3-1.7 4.4-5.6 7.3z" fill="#fff"/>
+</svg>

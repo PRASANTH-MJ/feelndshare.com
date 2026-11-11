@@ -1,6 +1,15 @@
 // Replace with the real WhatsApp number (country code, no + or spaces)
 const WHATSAPP_NUMBER = "919447828763";
 
+// Google Business Profile: paste the real links once the profile is verified
+// (Profile: "Share profile" link. Review: "Ask for reviews" link from the profile dashboard.)
+const GOOGLE_PROFILE_URL = "";
+const GOOGLE_REVIEW_URL = "";
+document.querySelectorAll("[data-gbp]").forEach(a => {
+  const url = a.dataset.gbp === "review" ? GOOGLE_REVIEW_URL : GOOGLE_PROFILE_URL;
+  if (url) a.href = url;
+});
+
 document.getElementById("yr").textContent = new Date().getFullYear();
 
 // Mobile menu
@@ -17,7 +26,7 @@ document.getElementById("book-form").addEventListener("submit", e => {
   e.preventDefault();
   const f = new FormData(e.target);
   const text =
-    `Hello Feel N Share, I'd like to book a session.\n\n` +
+    `Hello Feelndshare, I'd like to book a session.\n\n` +
     `Name: ${f.get("name")}\nPhone: ${f.get("phone")}\n` +
     `Service: ${f.get("service")}\nPlan: ${f.get("plan")}\nMode: ${f.get("mode")}` +
     (f.get("msg") ? `\nNote: ${f.get("msg")}` : "");
@@ -28,7 +37,7 @@ document.getElementById("book-form").addEventListener("submit", e => {
 const io = new IntersectionObserver(entries => {
   entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); } });
 }, { threshold: 0.12 });
-document.querySelectorAll(".card, .steps li, .price, details, .two-col > div, .about-grid > div, .doctor-grid > div").forEach(el => {
+document.querySelectorAll(".card, .steps li, .price, .free-card, details, .two-col > div, .about-grid > div, .doctor-grid > div").forEach(el => {
   el.classList.add("reveal");
   io.observe(el);
 });
